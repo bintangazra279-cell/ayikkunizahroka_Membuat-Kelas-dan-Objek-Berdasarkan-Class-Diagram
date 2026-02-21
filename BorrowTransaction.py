@@ -13,7 +13,7 @@ class BorrowTransaction:
             self.borrow_date = datetime.now().strftime("%Y-%m-%d")
             self.returned = False
             self.member.borrowed_books.append(self)
-            print(f"{self.member.name} berhasil meminjam {book.title}")
+            print(f"{self.member.name} berhasil meminjam {book.title} dilayani oleh {staff.name}")
         else:
             print("Buku sedang tidak tersedia")
 
@@ -21,6 +21,7 @@ class BorrowTransaction:
         if not self.returned:
             book.return_book()
             self.returned = True
-            print(f"{self.member.name} mengembalikan {book.title}")
+            print(f"{self.member.name} mengembalikan {book.title} kepada {staff.name}")
         else:
+
             print("Buku sudah dikembalikan")
